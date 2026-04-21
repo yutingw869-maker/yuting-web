@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>项目展厅 - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mesh-background"></div>
+    <main class="content-wrapper">
+        <a href="index.html" class="btn-action btn-back">← 返回主页</a>
+        <div class="glass detail-card">
+            <h1 class="gradient-text text-4xl mb-8">项目展厅</h1>
+            
+            <div class="section-box">
+                <h3 class="text-xl font-bold text-blue-600">🌟 基于RFM模型与T-检验的电商数据分析</h3>
+                <p class="text-sm text-gray-500 mb-3">2026.04</p>
+                <p class="text-gray-700">在处理 Olist 百万级原始交易数据（包含订单、支付、产品、客户等 9 张关联表）时，我进行了深度性能对比。我发现当涉及大规模多表联查（Join）且逻辑复杂时，纯 SQL 的执行效率明显受限于数据库服务器负载和索引开销。于是我调整了方案，改用 SQLAlchemy 将结构化数据快速拉取至内存，利用 Python (Pandas) 的向量化操作进行高效清洗与关联。这种“数据库抓取 + 内存处理”的混合模式，将数据预处理的耗时缩短了近 40%，深刻体会到了在海量数据面前，工程选型的重要性。<br><br>用户行为分层是整个项目的“灵魂”。通过 Python 自动化计算每个客户的消费频率 (Frequency)、最近消费时间 (Recency) 和消费金额 (Monetary)<br><br>我在 9 万多名活跃用户中，识别出了约 15% 的“重要价值客户”。这部分客户贡献了近 45% 的 GMV，是平台的核心资产。更有趣的是，通过 RFM 的变动趋势，我们定位到了一批“重要挽留客户”，这为后续制定针对性的优惠策略和 EDM 营销提供了精准的名单支持。<br><br>最终，我将清洗后的数据导入 Power BI。我构建了全链路转化看板，发现订单取消并非集中在物流端，而是支付延迟导致的订单超时占了很大比重。<br><br>通过 独立样本 T-检验 (Independent T-Test)，我验证了两个关键业务猜想：1. 服务痛点： 统计结果显示（p < 0.05），用户低分评价与商家发货延迟具有显著相关性，精准定位了物流端的服务短板。2. 金融价值： 经 T-检验验证，使用信用卡支付的订单总额显著高于其他支付方式。这一发现为平台后续推行分期活动、提升客单价提供了有力的数据支持
+            </div>
+
+            <div class="section-box">
+                <h3 class="text-xl font-bold text-blue-600">🧬 超图神经网络研究</h3>
+                <p class="text-sm text-gray-500 mb-3">2025.11 - 2026.02</p>
+                <p class="text-gray-700">在研究空间转录组数据时，传统的普通图网络（Simple Graph）存在天然的局限性：它仅能建模细胞之间“一对一”的二元关系。然而，肿瘤微环境（TME）是一个极其复杂的生态系统，细胞通讯往往涉及多个细胞共同参与的旁分泌或群体感应。超图（Hypergraph） 的引入实现了拓扑结构的升维。<br><br>在我的研究中，一条超边（Hyperedge） 可以同时连接多个空间位置相近或功能相关的细胞，完美捕捉了细胞之间这种“多对多”的高阶交互关系（High-order Interactions）。这使我们能够从更高维度的视角，更精准地解析肿瘤内部复杂的异质性。<br><br>我们在项目中设计了一套非常巧妙的自监督对比学习框架。具体来说，我们为同一组细胞数据构建了两个平行的观察视角：普通图视角： 刻画局部、精细的物理邻域连接。超图视角： 刻画全局、深层的群体功能关联。通过引入 InfoNCE Loss 目标函数，我们强制让这两种视角在特征空间中进行相互约束与对齐。<br><br>在这种“自我博弈”中，模型学会了自动识别并保留那些对细胞通讯最具贡献的核心特征。这种跨视角的特征学习模式，极大地缓解了生物数据中常见的数据稀疏（Sparsity）和采样噪声问题。这种“超图+对比学习”的范式，在下游的配体-受体（L-R）链路预测任务中展现了显著优势。相比于传统方法，我们的模型在 AUC 指标和Z空间相似度分析上均有突破。</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
